@@ -6,7 +6,7 @@ use App\Hotash\Mail\Mailable;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 
-class TestMail extends Mailable
+class BestMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -27,6 +27,6 @@ class TestMail extends Mailable
      */
     public function build()
     {
-        return $this->view('welcome')->subject('Test Subject');
+        return $this->markdown('mail.best-mail')->subject('Best Subject');
     }
 }
