@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware(['splade'])->group(function () {
+    Route::get('/', fn () => view('home'))->name('home');
+    Route::get('/docs', fn () => view('docs'))->name('docs');
 });
