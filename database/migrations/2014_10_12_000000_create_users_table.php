@@ -15,10 +15,20 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('timezone')->default('Asia/Dhaka');
+            $table->string('date_format')->default('d-M-Y');
+            $table->string('time_format')->default('h:i A');
+            $table->string('locale', 12)->default('en');
+            $table->unsignedInteger('first_day_of_week')->default(0);
+            $table->text('mail_signature')->nullable();
+            $table->dateTime('last_active_at')->nullable();
             $table->string('password');
+            $table->string('avatar')->nullable();
+            $table->boolean('super_admin')->default(false);
+            $table->boolean('access_api')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

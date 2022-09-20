@@ -6,12 +6,20 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "genealabs/laravel-pivot-events": "*",
+        "google/apiclient": "^2.12",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
+        "league/oauth2-client": "^2.6",
+        "league/oauth2-google": "^4.0",
+        "plank/laravel-mediable": "^5.6",
+        "plank/laravel-metable": "^5.2",
         "protonemedia/laravel-splade": "^0.4.25",
-        "protonemedia/laravel-splade-breeze": "^1.0"
+        "protonemedia/laravel-splade-breeze": "^1.0",
+        "spatie/laravel-permission": "^5.5",
+        "spatie/once": "^3.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

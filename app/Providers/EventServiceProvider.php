@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Innoclapps\OAuth\Events\OAuthAccountConnected;
+use App\Listeners\AttachEmailAccountMessageToContact;
+use App\Listeners\CreateContactFromEmailAccountMessage;
+use App\Listeners\CreateEmailAccountViaOAuth;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -17,6 +21,14 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
+        ],
+
+        OAuthAccountConnected::class => [
+            CreateEmailAccountViaOAuth::class,
+        ],
+        EmailAccountMessageCreated::class => [
+            CreateContactFromEmailAccountMessage::class,
+            AttachEmailAccountMessageToContact::class,
         ],
     ];
 

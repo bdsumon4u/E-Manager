@@ -194,6 +194,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Innoclapps\InnoclappsServiceProvider::class,
+        App\Innoclapps\OAuth\OAuthServiceProvider::class,
+        App\Providers\InboxServiceProvider::class,
 
     ],
 
